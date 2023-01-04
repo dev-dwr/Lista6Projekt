@@ -15,7 +15,7 @@ public:
     void printElement(int offset);
 
     int getNumberOfElementsInBackpack();
-    void getSolution(CIndividual* individual);
+    void getSolution(std::vector<CIndividual*> individuals);
 private:
     float capacityKnap;
     std::vector<float> weightsVector;

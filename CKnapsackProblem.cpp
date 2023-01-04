@@ -5,7 +5,7 @@
 
 CKnapsackProblem::~CKnapsackProblem() {
     weightsVector.clear();
-    weightsVector.clear();
+    valuesVector.clear();
 }
 
 CKnapsackProblem::CKnapsackProblem(float capacity, const std::vector<float> &weights,
@@ -64,8 +64,10 @@ CKnapsackProblem::CKnapsackProblem(const std::string &path) {
 
 }
 
-void CKnapsackProblem::getSolution(CIndividual *individual) {
-    individual->calculateFitnessAndQuality(weightsVector, capacityKnap, valuesVector);
+void CKnapsackProblem::getSolution(std::vector<CIndividual*> individuals) {
+    for(CIndividual* individual : individuals){
+        individual->calculateFitnessAndQuality(weightsVector, capacityKnap, valuesVector);
+    }
 }
 
 void CKnapsackProblem::print() {

@@ -46,10 +46,7 @@ CIndividual *CGeneticAlgorithm::findBestIndividual() {
 
 
 void CGeneticAlgorithm::calculateSolution(CKnapsackProblem &problem) {
-    int size = individualVector.size();
-    for (int i = 0; i < size; i++) {
-        problem.getSolution(individualVector.at(i));
-    }
+    problem.getSolution(individualVector);
 }
 
 
@@ -101,7 +98,7 @@ CIndividual *CGeneticAlgorithm::start(CKnapsackProblem &problem) {
     }
     std::cout << "best individual is quality :" << std::endl;
     CIndividual *best = findBestIndividual();
-    std::cout << best->getQuality()<<std::endl;
+    std::cout << best->getQuality() << std::endl;
     std::cout << "genotype:" << std::endl;
     best->printGenotype();
 
